@@ -1,9 +1,34 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
-    <ion-title>actualizar-pwd</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Actualizar contraseña</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <img src="assets/icon/logo.svg" class="logo">
+        <form [formGroup]="edicionForm" (ngSubmit)="guardar()" class="list-form formulario">
+          <ion-item class="ion-no-padding">
+            <ion-input [type]="showPassword1 ? 'text' : 'password'" formControlName="passwordActual" placeholder="Contraseña actual"></ion-input>
+            <ion-icon style="color: rgba(0, 0, 0, 0.54);" slot="end" [name]="passwordToggleIcon1" (click)="togglePassword1()"></ion-icon>      
+          </ion-item>
+          <ion-item class="ion-no-padding" style="padding-top: 20px;">
+            <ion-input [type]="showPassword2 ? 'text' : 'password'" formControlName="passwordNueva" placeholder="Nueva contraseña"></ion-input>
+            <ion-icon style="color: rgba(0, 0, 0, 0.54);" slot="end" [name]="passwordToggleIcon2" (click)="togglePassword2()"></ion-icon>      
+          </ion-item>
+          <ion-item class="ion-no-padding" style="padding-top: 20px;">
+            <ion-input [type]="showPassword3 ? 'text' : 'password'" formControlName="confirmacionPasswordNueva" placeholder="Nueva contraseña"></ion-input>
+            <ion-icon style="color: rgba(0, 0, 0, 0.54);" slot="end" [name]="passwordToggleIcon3" (click)="togglePassword3()"></ion-icon>      
+          </ion-item>
+          <ion-button class="boton" style="margin-top: 20px;" type="submit">ENVIAR</ion-button>
+        </form>  
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
