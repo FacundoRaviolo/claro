@@ -1,0 +1,22 @@
+.logo {
+  width: 150px;
+  height: 76px;
+  margin-top: 103px;
+}
+
+.boton {
+  --background:#D62826; 
+  --background-activated: #e42323;
+  --background-focused: #e42323;
+  --background-hover: #e42323;
+  width: 136px;
+  height: 56px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.formulario {
+  position: absolute;
+  width: 100%;
+  top: 206px;
+}

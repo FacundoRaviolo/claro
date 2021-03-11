@@ -30,7 +30,7 @@ export class ActualizarPwdPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.menuCtrl.enable (true);
+    this.menuCtrl.enable(false);
     this.edicionForm = this.formBuilder.group({
       passwordActual: [null, [Validators.required]],
       passwordNueva: [null, [Validators.required]],
