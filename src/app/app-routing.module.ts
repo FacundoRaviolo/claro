@@ -10,6 +10,18 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'actualizar-pwd',
+    loadChildren: () => import('./components/pages/actualizar-pwd/actualizar-pwd.module').then( m => m.ActualizarPwdPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./components/pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'gestion-operaciones',
+    loadChildren: () => import('./components/pages/gestion-operaciones/gestion-operaciones.module').then( m => m.GestionOperacionesPageModule)
   }
 ];
 
