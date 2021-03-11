@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -6,13 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Home', icon: 'home' },
+    { title: 'Avisos', icon: 'notifications' },
+    { title: 'Guardias', icon: 'calendar' },
+    { title: 'Alarmas', icon: 'alarm' },
+    { title: 'SES', icon: 'calendar' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+ 
+  constructor(
+    private router: Router
+  ) {}
+
+  cerrarSesion() {
+    // Lógica de cierre de sesión
+    this.router.navigate(['login']);
+  }
 }

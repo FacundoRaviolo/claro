@@ -1,26 +1,36 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
+      <div style="width: 100%; height: 153px; background-color: #D62826; text-align: center; justify-content: center; align-content: center;">
+        <div style="margin-left: 115px; margin-top: 20px; margin-bottom: 15px;">
+          <ion-avatar >
+            <text-avatar text="JL"></text-avatar>
+          </ion-avatar>  
+        </div>
+        <ion-label style="color: white; font-size: 14px; font-weight: bold;">Juan López</ion-label><br>
+        <ion-label style="color: white; font-size: 14px;">CLA12345</ion-label>
+      </div>
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com</ion-note>
-
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+            <ion-item routerDirection="root" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon style="color: #D62826;" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
 
         <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item lines="none">
+              <ion-icon style="color: #D62826;" slot="start" [ios]="'settings-outline'" [md]="'settings-sharp'"></ion-icon>
+              <ion-label>Configuración</ion-label>
+            </ion-item>
+            <ion-item (click)="cerrarSesion()" lines="none">
+              <ion-icon style="color: #D62826;" slot="start" [ios]="'log-out-outline'" [md]="'log-out-sharp'"></ion-icon>
+              <ion-label>Cerrar sesión</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
       </ion-content>
     </ion-menu>
